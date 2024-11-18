@@ -1,0 +1,47 @@
+﻿@model ContactModel
+
+@{
+ViewBag.Title = "Dodaj kontakt";
+Layout = "_Layout";
+}
+
+<h2>Dodaj kontakt</h2>
+<div class="col-6">
+    <form asp-action="Add" method="post">
+        <div class="mb-3">
+            <label class="form-label" asp-for="FirstName"></label>
+            <input class="form-control" asp-for="FirstName"/>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="LastName"></label>
+            <input class="form-control" asp-for="LastName"/>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Email"></label>
+            <input class="form-control" asp-for="Email"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="PhoneNumber"></label>
+            <input class="form-control" asp-for="PhoneNumber"/>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="BirthDate"></label>
+            <input class="form-control" asp-for="BirthDate"/>
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Category"></label>
+            <select class="form-control" asp-items="@Html.GetEnumSelectList<Category>()" asp-for="Category"></select>
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="OrganizationId">Wybierz organizacje</label>
+            <select asp-for="OrganizationId" asp-items="@Model.Organizations"></select>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Dodaj</button>
+    </form>
+</div>
