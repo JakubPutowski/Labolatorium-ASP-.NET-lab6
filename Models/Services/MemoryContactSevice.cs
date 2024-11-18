@@ -8,16 +8,16 @@ public class MemoryContactService:IContactService
             1,
             new()
             {
-                Id = 1, Email = "ascfsd@gmail.com", FirstName = "Olaf", LastName = "Ciuła", Category = Category.Family,
-                BirthDate = new DateTime(1970, 10, 10), PhoneNumber = "333 333 333"
+                Id = 1, Email = "jjjjj@gmail.com", FirstName = "Jakub", LastName = "Putowski", Category = Category.Family,
+                BirthDate = new DateTime(1980, 10, 10), PhoneNumber = "222 222 222"
             }
         },
         {
             2,
             new()
             {
-                Id = 2, Email = "arfsdd@gmail.com", FirstName = "Ola", LastName = "rresgd",
-                BirthDate = new DateTime(1970, 10, 10), PhoneNumber = "333 333 333"
+                Id = 2, Email = "jakub@wsei.com", FirstName = "Marian", LastName = "Kowalski",
+                BirthDate = new DateTime(1970, 10, 10), PhoneNumber = "111 111 111"
             }
         }
     };

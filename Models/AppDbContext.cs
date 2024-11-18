@@ -30,8 +30,8 @@ public class AppDbContext: DbContext
         modelBuilder.Entity<OrganizationEntity>()
             .OwnsOne(o => o.Address)
             .HasData(
-                new { OrganizationEntityId = 1, City ="Kraków", Street ="św Filipa 18"},
-                new { OrganizationEntityId = 2, City ="Kraków", Street ="Buncha"}
+                new { OrganizationEntityId = 1, City ="Kraków", Street ="św Filipa"},
+                new { OrganizationEntityId = 2, City ="Jędrzejów", Street ="Partyzantow"}
             );
 
         modelBuilder.Entity<ContactEntity>()
@@ -44,16 +44,16 @@ public class AppDbContext: DbContext
                 new OrganizationEntity()
                 {
                     Id = 1,
-                    Regon = "74576364",
-                    Nip = "12423534",
+                    Regon = "22223333",
+                    Nip = "123123123",
                     Name = "WSEI"
                 },
                 new OrganizationEntity()
                 {
                     Id = 2,
-                    Regon = "7254231",
-                    Nip = "864363",
-                    Name = "WEBCON"
+                    Regon = "4443331",
+                    Nip = "1212121",
+                    Name = "Webcon"
                 }
             );
         
@@ -62,22 +62,22 @@ public class AppDbContext: DbContext
                 new ContactEntity()
                 {
                     Id = 1,
-                    FirstName = "Adam",
-                    LastName = "Nowak",
+                    FirstName = "Marian",
+                    LastName = "Kowalski",
                     BirthDate = new(2000, 10, 10),
                     PhoneNumber = "333 333 333",
-                    Email = "adam@.wsei.edu.pl",
+                    Email = "mariankowalski@.wsei.edu.pl",
                     Created = DateTime.Now,
                     OrganizationId = 1
                 },
                 new ContactEntity()
                 {
                     Id = 2,
-                    FirstName = "Ada",
-                    LastName = "Fisak",
+                    FirstName = "Jakub",
+                    LastName = "Nowak",
                     BirthDate = new(2000, 11, 10),
-                    PhoneNumber = "333 333 333",
-                    Email = "ada@.wsei.edu.pl",
+                    PhoneNumber = "111 111 111",
+                    Email = "jn@wsei.edu.pl",
                     Created = DateTime.Now,
                     OrganizationId = 2
                 }
