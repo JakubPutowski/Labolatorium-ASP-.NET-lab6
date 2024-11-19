@@ -1,8 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project.Models;
 
-public class AppDbContext: DbContext
+
+
+public class AppDbContext: IdentityDbContext<IdentityUser>
 {
     public DbSet<ContactEntity> Contacts {
         get;
@@ -27,6 +31,11 @@ public class AppDbContext: DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        
+        string  ADMIN_ID = Guid.NewGuid().ToString();
+        string USER_ID = Guid.NewGuid().ToString();
+        
         modelBuilder.Entity<OrganizationEntity>()
             .OwnsOne(o => o.Address)
             .HasData(
